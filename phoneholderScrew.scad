@@ -1,3 +1,7 @@
+/*
+modeled after NGM Legend 2
+
+*/
 module phoneholderScrew(){
  phoneholder(127);//127
 translate([0,0,2]){
