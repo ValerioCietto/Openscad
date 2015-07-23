@@ -19,17 +19,31 @@ module MeccanoL(size,hole){
 }
 module MeccanoY(size,hole){
    Meccano(size, hole);
-   translate([(size[0]/2)*sin(45)+size[0]/2,0,size[0]/2*sin(45)])
+   translate([(size[0]/2)*sin(45)+size[0]/2,0,size[0]/2*cos(45)])
    rotate([0,135,0])
+   Meccano(size, hole); 
+}
+
+module Meccano30(size,hole){
+   Meccano(size, hole);
+   translate([(size[0]/2)*sin(30)+size[0]/2,0,size[0]/2*cos(30)])
+   rotate([0,120,0])
+   Meccano(size, hole); 
+}
+
+module MeccanoAngle(size,hole,angle){
+   Meccano(size, hole);
+   translate([(size[0]/2)*sin(angle)+size[0]/2,0,size[0]/2*cos(angle)])
+   rotate([0,90+angle,0])
    Meccano(size, hole); 
 }
 module MeccanoC(size,hole){
    Meccano(size, hole);
-   translate([(size[0]/2)*sin(45)+size[0]/2,0,size[0]/2*sin(45)])
+   translate([(size[0]/2)*sin(45)+size[0]/2,0,size[0]/2*cos(45)])
    rotate([0,135,0])
    Meccano(size, hole); 
-   translate([(size[0]/2)*-sin(45)-size[0]/2,0,size[0]/2*sin(45)])
+   translate([(size[0]/2)*-sin(45)-size[0]/2,0,size[0]/2*cos(45)])
    rotate([0,45,0])
    Meccano(size, hole); 
 }
-MeccanoC([30,10,1], 4.5);
+MeccanoAngle([30,10,5], 4.5, 40);
